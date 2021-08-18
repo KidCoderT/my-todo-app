@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>My Todo app</title>
+</head>
+<body>
+  
+  <div id="app">
+    <!-- Main Part -->
+    <div class="mainBody">
+    
+      <!-- Title with Text: "My Plans 😃!" -->
+      <h1 class="mainBody__title">My Plans 😃!</h1>
+    
+      <!-- Tabs Menu -->
+      <div class="mainBody__workspace">
+        <div class="workspace__tabsContainer">
+          <!-- Todo Tasks Tab -->
+          <button class="workspace__tab">todos</button>
+          <!-- Completed Tasks Tab -->
+          <button class="workspace__tab">completed</button>
+          <!-- Reminders Tab -->
+          <button class="workspace__tab">reminders</button>
+        </div>
+    
+        <!-- Todo Tasks Workspace -->
+        <div id="todos" class="section__workspace">
+          <!-- Todo list -->
+          <ul id="todos__list">
+            <li v-for="todo in todos" :key="todo.id">
+              {{ todo.title }}
+            </li>
+          </ul>
+
+          <!-- Add items -->
+          <form id="addTaskForm" class="addTask__formContainer">
+              <input text="{{ newTodoTitle }}"id="newTodoTitle" class="form__input" type="text" placeholder="Add Tasks" v-model="newTodoTitle">
+              <button class="submit__button" type="submit"><i class="fa fa-plus"></i></button>
+          </form>
+        </div>
+        <!-- Completed Tasks Workspace
+        <div id="completed" class="section__workspace"></div>
+        <div id="reminders" class="section__workspace"></div> -->
+      </div>
+    
+      <!-- Number of Tasks Left Counter -->
+      <h1 class="mainBody__taskCountdownText">you only have 10 tasks left, come on you can do it. 😃</h1>
+    
+    </div>
+    
+    <!-- Options Menu -->
+    <div class="optionsMenu">
+    
+      <!-- Title with Text: "Options Menu" -->
+    
+      <!-- Options Container -->
+      <!-- Plans Option -->
+      <!-- Results Option -->
+      <!-- My Work Plan -->
+    
+      <!-- Footer -->
+      <!-- 10min Break Button -->
+      <!-- Todays Date -->
+    
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
